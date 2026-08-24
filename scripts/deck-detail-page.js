@@ -9,13 +9,7 @@ const loadingEl = document.querySelector("#detail-loading");
 
 function getDeckIdFromPath() {
   const byQuery = Number(new URLSearchParams(window.location.search).get("id"));
-  if (Number.isFinite(byQuery) && byQuery > 0) {
-    return byQuery;
-  }
-
-  const segments = window.location.pathname.split("/").filter(Boolean);
-  const maybeId = Number(segments[1]);
-  return Number.isFinite(maybeId) && maybeId > 0 ? maybeId : null;
+  return Number.isFinite(byQuery) && byQuery > 0 ? byQuery : null;
 }
 
 function renderNotFound() {
@@ -68,9 +62,9 @@ async function init() {
   loadingEl.hidden = true;
 
   titleEl.textContent = deck.title;
-  studyLink.href = `/decks/study?id=${deckId}`;
+  studyLink.href = `./study/index.html?id=${deckId}`;
   if (editLink) {
-    editLink.href = `/decks/edit?id=${deckId}`;
+    editLink.href = `./edit/index.html?id=${deckId}`;
   }
 
   listEl.innerHTML = "";

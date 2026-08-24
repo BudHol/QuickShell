@@ -15,7 +15,7 @@ function buildDeckCard(deck) {
   card.setAttribute("role", "link");
   card.setAttribute("aria-label", `Open deck ${deck.title}`);
 
-  const deckHref = `/decks/deck?id=${deck.id}`;
+  const deckHref = `./deck/index.html?id=${deck.id}`;
   card.addEventListener("click", () => {
     window.location.href = deckHref;
   });

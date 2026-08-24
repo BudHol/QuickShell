@@ -88,7 +88,7 @@ async function initializeForm(deckId) {
   }
 
   titleInput.value = deck.title;
-  cancelLink.href = `/decks/deck?id=${deckId}`;
+  cancelLink.href = `../index.html?id=${deckId}`;
 
   rowContainer.innerHTML = "";
   if (flashcards.length === 0) {
@@ -140,7 +140,7 @@ form.addEventListener("submit", async (event) => {
 
   try {
     await updateDeckWithFlashcards(deckId, title, flashcards);
-    window.location.href = `/decks/deck?id=${deckId}`;
+    window.location.href = `../index.html?id=${deckId}`;
   } catch (error) {
     showError("Something went wrong while saving changes. Please try again.");
     saveButton.disabled = false;

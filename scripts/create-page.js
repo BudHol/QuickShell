@@ -95,7 +95,7 @@ form.addEventListener("submit", async (event) => {
 
   try {
     await saveDeckWithFlashcards(title, flashcards);
-    window.location.href = "/decks";
+    window.location.href = "../decks/index.html";
   } catch (error) {
     showError("Something went wrong while saving the deck. Please try again.");
     saveButton.disabled = false;

@@ -26,13 +26,7 @@ let isFlipped = false;
 
 function getDeckIdFromPath() {
   const byQuery = Number(new URLSearchParams(window.location.search).get("id"));
-  if (Number.isFinite(byQuery) && byQuery > 0) {
-    return byQuery;
-  }
-
-  const segments = window.location.pathname.split("/").filter(Boolean);
-  const maybeId = Number(segments[1]);
-  return Number.isFinite(maybeId) && maybeId > 0 ? maybeId : null;
+  return Number.isFinite(byQuery) && byQuery > 0 ? byQuery : null;
 }
 
 function shuffleCards(cards) {
@@ -108,7 +102,7 @@ function showNoCards(deckId) {
   sessionEl.hidden = true;
   summaryEl.hidden = true;
   emptyEl.hidden = false;
-  emptyBackLink.href = deckId ? `/decks/deck?id=${deckId}` : "/decks";
+  emptyBackLink.href = deckId ? `../index.html?id=${deckId}` : "../../index.html";
 }
 
 function wireInteractions() {
@@ -165,7 +159,7 @@ async function init() {
     return;
   }
 
-  topBackLink.href = `/decks/deck?id=${deckId}`;
+  topBackLink.href = `../index.html?id=${deckId}`;
   deckTitleEl.textContent = deck.title;
 
   sourceCards = flashcards;
