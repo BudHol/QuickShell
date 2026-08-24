@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Deck – QuickCards – Study Smarter</title>
+    <meta name="description" content="Create flashcard decks and study them anywhere. No sign-up needed." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="/">QuickCards</a>
+        <a class="nav-link" href="/decks">My Decks</a>
+      </div>
+    </header>
+
+    <main class="page-main study-main">
+      <section class="container study-shell" id="study-shell">
+        <a id="study-back-link" href="/decks" class="back-link">Back to My Decks</a>
+
+        <p id="study-loading" class="loading-text">Loading your study session...</p>
+
+        <div id="study-empty" class="placeholder-card" hidden>
+          <h1 class="study-title">This deck has no cards yet</h1>
+          <div class="actions">
+            <a id="empty-back-link" class="btn btn-secondary" href="#">Back to Deck</a>
+          </div>
+        </div>
+
+        <div id="study-session" hidden>
+          <p id="study-progress" class="study-progress">Card 1 of 1</p>
+
+          <h1 id="study-deck-title" class="study-title">Study Deck</h1>
+
+          <button id="flashcard" class="study-card" type="button" aria-label="Flip card">
+            <span class="study-card-inner" id="study-card-inner">
+              <span class="study-card-face study-card-front">
+                <span class="study-label">Question</span>
+                <span id="study-question" class="study-text"></span>
+              </span>
+              <span class="study-card-face study-card-back">
+                <span class="study-label">Answer</span>
+                <span id="study-answer" class="study-text"></span>
+              </span>
+            </span>
+          </button>
+
+          <p class="study-hint">Tap the card to flip. Press Enter or Space to flip with keyboard.</p>
+
+          <div id="study-actions" class="actions study-actions" hidden>
+            <button id="knew-it" class="btn btn-primary" type="button">I knew it</button>
+            <button id="did-not-know" class="btn btn-secondary" type="button">I didn't know it</button>
+          </div>
+        </div>
+
+        <div id="study-summary" class="placeholder-card study-summary" hidden>
+          <h1 class="study-title" id="summary-line">You knew 0 out of 0 cards</h1>
+          <div class="actions study-actions">
+            <button id="study-again" class="btn btn-primary" type="button">Study Again</button>
+            <a class="btn btn-secondary" href="/decks">Back to My Decks</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="../../scripts/study-page.js"></script>
+  </body>
+</html>

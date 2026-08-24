@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deck Details – QuickCards – Study Smarter</title>
+    <meta name="description" content="Create flashcard decks and study them anywhere. No sign-up needed." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="/">QuickCards</a>
+        <a class="nav-link" href="/decks">My Decks</a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="container placeholder-card detail-shell">
+        <a href="/decks" class="back-link">Back to My Decks</a>
+        <div class="detail-header-row">
+          <h1 id="deck-title">Deck</h1>
+          <a id="edit-link" class="btn btn-secondary" href="#">Edit Deck</a>
+        </div>
+
+        <p id="detail-loading" class="loading-text">Loading this deck...</p>
+
+        <div id="detail-empty" class="empty-state" hidden>
+          <p>This deck has no cards yet.</p>
+        </div>
+
+        <ul id="flashcard-list" class="detail-list"></ul>
+
+        <div class="actions detail-actions">
+          <a id="study-link" class="btn btn-primary" href="#">Study This Deck</a>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="../../scripts/deck-detail-page.js"></script>
+  </body>
+</html>

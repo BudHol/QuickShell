@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Decks – QuickCards – Study Smarter</title>
+    <meta name="description" content="Create flashcard decks and study them anywhere. No sign-up needed." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="/">QuickCards</a>
+        <a class="nav-link" href="/decks">My Decks</a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="container placeholder-card">
+        <h1>My Decks</h1>
+        <p id="decks-loading" class="loading-text">Loading your decks...</p>
+        <div id="empty-state" class="empty-state" hidden>
+          <p>You haven't made any decks yet.</p>
+          <a class="btn btn-primary" href="/create">Create a Deck</a>
+        </div>
+        <section id="deck-list" class="deck-list" hidden aria-label="Saved decks"></section>
+      </section>
+    </main>
+    <script type="module" src="../scripts/decks-page.js"></script>
+  </body>
+</html>
